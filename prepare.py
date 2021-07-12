@@ -77,9 +77,6 @@ def prep_dates_cc_fraud(df):
     df['late_night'] = np.where(((df.trans_hour == 22) | (df.trans_hour == 23)), 1, 0)
     print('Looking at out late_night Value Counts')
     print(df.late_night.value_counts())
-    print('')
-    
-    print('New Dataframe With Datatime Object and Categorical Columns:\n')
     
     return df
 
