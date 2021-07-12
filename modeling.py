@@ -32,7 +32,7 @@ def evaluate(X_df, y_df, model):
 
     #conf Matrix
     conf = confusion_matrix(y_df, pred)
-    mat =  pd.DataFrame ((confusion_matrix(y_df, pred )),index = ['actual_not_churned','actual_churned'], columns =['pred_not_churned','pred_churned' ])
+    mat =  pd.DataFrame ((confusion_matrix(y_df, pred )),index = ['actual_not_fraud','actual_fraud'], columns =['pred_not_fraud','pred_fraud' ])
     rubric_df = pd.DataFrame([['True Negative', 'False positive'], ['False Negative', 'True Positive']], columns=mat.columns, index=mat.index)
     cf = rubric_df + ': ' + mat.values.astype(str)
 
@@ -50,7 +50,7 @@ def evaluate(X_df, y_df, model):
 
     #classification report
     clas_rep =pd.DataFrame(classification_report(y_df, pred, output_dict=True)).T
-    clas_rep.rename(index={'0': "not churned", '1': "churned"}, inplace = True)
+    clas_rep.rename(index={'0': "not fraud", '1': "fraud"}, inplace = True)
     print(f'''
     The accuracy for our model is {acc:.4%}
     The True Positive Rate is {tpr:.3%},    The False Positive Rate is {fpr:.3%},
@@ -58,7 +58,7 @@ def evaluate(X_df, y_df, model):
     ________________________________________________________________________________
     ''')
     print('''
-    The positive is  'churned'
+    The positive is  'fraud'
     Confusion Matrix
     ''')
     display(cf)
