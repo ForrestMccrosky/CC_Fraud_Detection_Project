@@ -1,4 +1,4 @@
-# Individual Classification Project: Predictin Credit Card Fraud
+# Individual Classification Project: Predicting Credit Card Fraud
 
 ## Project Description
  - The purpose of this notebook is to acquire, prep, explore a csv file downloaded from kaggle.com that contains Credit Card transactions and use classification modeling to predict whether or not the transactions made were fraud.
