@@ -142,6 +142,65 @@ The goal of the modeling and evalutaion component of the pipeline is to use the 
 
 ### All Columns After Prepare
 
+| Column Name     | Data Type      | Value                                                                                                  |
+|-----------------|----------------|--------------------------------------------------------------------------------------------------------|
+| trans_time      | datetime64     | credit card purchase transaction time                                                                  |
+| cc_num          | int64          | credit number of customer                                                                              |
+| merchant        | object         | name of the purchase location                                                                          |
+| category        | object         | category of the transaction ex: (online shopping, grocery, gas, etc.)                                  |
+| amt             | float64        | amount of the transaction                                                                              |
+| first           | object         | first name of the cardholder                                                                           |
+| last            | object         | last name of the cardholder                                                                            |
+| gender          | object         | gender of the card holder                                                                              |
+| street          | object         | street location of the card holder                                                                     |
+| city            | object         | city location of the card holder                                                                       |
+| state           | object         | state location of the card holder                                                                      |
+| zip             | int64          | postal code location of the card holder                                                                |
+| lat             | float64        | latitude coordinate for the card holder                                                                |
+| long            | float64        | longitude coordinate for the card holder                                                               |
+| city_pop        | int64          | population of the city of the card holder                                                              |
+| job             | object         | job title of the card holder                                                                           |
+| dob             | datetime64     | date of birth of the card holder                                                                       |
+| trans_num       | object         | transaction number for the cc purchase                                                                 |
+| unix_time       | int64          | unix time of the purchase                                                                              |
+| merch_lat       | float64        | latitude coordinate for the cc purchase location                                                       |
+| merch_long      | float64        | longitude coordinate for the cc purchase location                                                      |
+| weekday         | int64          | weekday value for the cc purchase                                                                      |
+| trans_hour      | int64          | transaction hour value for the cc purchase                                                             |
+| year            | int64          | transaction year value for the cc purchase                                                             |
+| month           | int64          | transaction month value for the cc purchase                                                            |
+| customer_age    | int64          | age of the card holder (trans_time - dob)                                                              |
+| late_night      | int64          | categorical column 1 for cc purchases that fell in the hours of 11PM and 12AM 0 if not                 |
+| entertainment   | int64          | categorical column 1 if purchase category is entertainment 0 if not                                    |
+| home            | int64          | categorical column 1 if purchase category is home 0 if not                                             |
+| shopping_net    | int64          | categorical column 1 if purchase category is online shopping 0 if not                                  |
+| misc_net        | int64          | categorical column 1 if purchase category is misc 0 if not                                             |
+| grocery_net     | int64          | categorical column 1 if purchase category is online groceries 0 if not                                 |
+| grocery_pos     | int64          | categorical column 1 if purchase category is grocery in store 0 if not                                 |
+| travel          | int64          | categorical column 1 if purchase category is travel 0 if not                                           |
+| high_fraud_cat  | int64          | if purchase falls under online shopping or grocery pos value = 1, 0 if not                             |
+| is_male         | int64          | 1 if customer is male 0 if not                                                                         |
+| is_female       | int64          | 1 if customer is female 0 if not                                                                       |
+| Nevada          | int64          | 1 if card holder is in Nevada and 0 if not                                                             |
+| California      | int64          | 1 if card holder is in California and 0 if not                                                         |
+| New_Mexico      | int64          | 1 if card holder is in New_Mexico and 0 if not                                                         |
+| Florida         | int64          | 1 if card holder is in Florida 0 if not                                                                |
+| Texas           | int64          | 1 if card holder is in Texas 0 if not                                                                  |
+| Virginia        | int64          | 1 if card holder is in Virginia 0 if not                                                               |
+| Arizona         | int64          | 1 if card holder is in Arizona 0 if not                                                                |
+| age_bin         | category       | Bins the customer ages (0, 20, 40, 60, 96) represented with the values 1, 2, 3, 4                      |
+| amt_bin         | category       | Bins the transaction amount (0, 25, 40, 50, 100, 200, 30000) represented with the values 1, 2, 3, 4, 5 |
+| 0-25_dollars    | int64          | 1 if transaction amount is between 0 and 25 dollars 0 if not                                           |
+| 25-40_dollars   | int64          | 1 if transaction amount is between 25 and 40 dollars 0 if not                                          |
+| 40-50_dollars   | int64          | 1 if transaction amount is between 40 and 50 dollars 0 if not                                          |
+| 50-100_dollars  | int64          | 1 if transaction amount is between 50 and 100 dollars 0 if not                                         |
+| 100-200_dollars | int64          | 1 if transaction amount is between 100 and 300 dolalrs 0 if not                                        |
+| high_dollars    | int64          | 1 if transaction exceeds 200 dollars 0 if not                                                          |
+| 0-20_age        | in64           | 1 if customer age is between 0 and 20 0 if not                                                         |
+| 20-40_age       | int64          | 1 if customer age is between 20 and 40 0 if not                                                        |
+| 40-60_age       | int64          | 1 if customer age is between 40 and 60 0 if not                                                        |
+| 60-96_age       | int64          | 1 if customer age is between 60 and 96 0 if not                                                        |
+
 
 
  ## Project Recreation
