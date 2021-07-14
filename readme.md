@@ -204,6 +204,6 @@ The goal of the modeling and evalutaion component of the pipeline is to use the 
 
 
  ## Project Recreation
- - Download the archived folder from kaggle.com containing the train csv for the credit card transaction data
+ - Download the archived folder from https://www.kaggle.com/kartik2112/fraud-detection?select=fraudTrain.csv containing the train csv for the credit card transaction data
  - Use the functions in the .py files and follow the pipeline flow of the notebook
  - Feel free to adjust hyperparameters of the models and try out the results yourself!
